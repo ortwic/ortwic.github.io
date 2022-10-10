@@ -1,0 +1,526 @@
+/* ----------------------- Google Fonts -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;700;800;900&display=swap');
+
+/* ----------------------- CSS Variables ------------------- */
+:root
+{
+    --header-height: 3rem;
+
+    /* font weight */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* Colors */
+    --first-color: #d7dcee;
+    --first-color-dark: #d7dcee;
+    --first-color-darken: #686D75;
+    --text-color: #EAE7E6;
+    --first-color-light: #EAE7E6;
+    --first-color-light-dark: #BA4D41;
+    --first-color-lighten: #FACC6B;
+	
+    /* --first-color: #3742fa; */
+    /* --first-color-dark: #5352ed; */
+    /* --first-color-darken: #4747f0; */
+    /* --text-color: #54423D; */
+    /* --first-color-light: #EAE7E6; */
+    /* --first-color-light-dark: #d7dcee; */
+    /* --first-color-lighten: #FFFAFA; */
+
+    /* Font & Typography */
+    --body-font: 'Poppins', sans-serif;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* Margins */
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+
+    /* z-index */
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px)
+{
+    :root
+    {
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/* BASE */
+*, ::before, ::after
+{
+    box-sizing: border-box;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    background-color: #24264F;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, p
+{
+    margin: 0;
+}
+
+h3
+{
+    font-weight: var(--font-semi-bold);
+}
+
+a
+{
+    text-decoration: none;
+    color: var(--first-color-lighten);
+}
+
+a:hover
+{
+    color: var(--first-color-light-dark);
+}
+
+img
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+nav.navbar
+{
+	border: 0;
+	background-color: #FACC6B;
+}
+
+div a.navbar-toggle
+{	
+    color: var(--first-color-darken);
+    border-color: var(--first-color-darken);
+}
+
+ul.navbar-nav
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a[for=menu-toggle] {
+	cursor: pointer;
+}
+
+/* Menu icon */
+.bx
+{
+    font-size: 1.6rem;
+}
+
+/* Class CSS */
+.section
+{
+    padding: 4rem 0 2rem;
+}
+
+h2.section-title
+{
+    font-size: var(--h1-font-size);
+    color: var(--first-color);
+    margin-bottom: var(--mb-3);
+}
+
+section > h2.section-title 
+{
+    text-align: center;
+}
+
+span.section-subtitle
+{
+    display: block;
+    font-size: var(--small-font-size);
+    color: var(--first-color-darken);
+    font-weight: var(--font-bold);
+    margin-bottom: .25rem;
+}
+
+section > span.section-subtitle 
+{
+    text-align: center;
+}
+
+button, input[type=submit]
+{
+    outline: none;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: #FACC6B;
+    cursor: pointer;
+}
+
+/* Layout */
+.bd-grid
+{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
+
+.l-header
+{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: #24264F;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: var(--mb-5);
+    padding: 12px;
+    border-radius: .5rem;
+	background-color: #1c1e3b;
+}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+    z-index: 10;
+    border-radius: 1.5rem;
+    /* background-color: #EC8F4C80; */
+}
+
+.carousel-caption span.section-subtitle {
+	/* color: #EC8F4C; */
+	text-shadow: 1px 1px 2px #000000C0;
+}
+
+.carousel-caption h2.section-title {
+	/* color: #EC8F4C; */
+	text-shadow: -1px 1px 0 #686D75,
+				  1px 1px 0 #686D75,
+				 1px -1px 0 #686D75,
+				-1px -1px 0 #686D75;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+    height: 32rem;
+}
+
+.carousel-item .img-container {
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-item .img-container img {
+    display: inline;
+}
+
+/* ----------------------- Home ------------------------------ */
+.height__container
+{
+    height: calc(100vh - var(--header-height));
+    align-items: center;
+}
+
+.copy 
+{
+    display: inline-block;
+}
+
+.social-link
+{
+    display: inline-flex;
+    background-color: var(--first-color-darken);
+    color: #24264F;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    padding: .40rem;
+    margin: 0 var(--mb-1);
+    transition: .3s;
+}
+
+.social-link:hover
+{
+    color: #24264F;
+    background-color: var(--first-color-dark);
+}
+
+/* -------------------------------------------- Skills ------------------------- */
+.skills__container
+{
+    row-gap: 2rem;
+}
+
+.skills__subtitle
+{
+    font-size: var(--h3-font-size);
+    color: var(--first-color-dark);
+    margin-bottom: var(--mb-2);
+}
+
+.skills__data
+{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 var(--mb-2);
+    margin-bottom: var(--mb-4);
+}
+
+.skills__bar
+{
+    position: absolute;
+	white-space: nowrap;
+    border-bottom: solid .25rem var(--first-color);
+}
+
+/* -------------------------------- Education ---------------------------- */
+.education__container
+{
+    row-gap: 2rem;
+}
+
+.education__content
+{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+}
+
+.education__year, .education__race
+{
+    font-size: var(--h3-font-size);
+    mask-border: .25rem;
+}
+
+.education__university, .education__specialty
+{
+    display: block;
+    font-size: var(--smaller-font-size);
+}
+
+.education__year, .education__university
+{
+    text-align: right;
+}
+
+.education__time
+{
+    padding: 0 1rem;
+    justify-self: center;
+}
+
+.education__rounder
+{
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+}
+
+.education__rounder::before
+{
+    content: '';
+    position: absolute;
+    transform: translate(-4px, -4px);
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--first-color);
+    border-radius: 50%;
+}
+
+.education__line
+{
+    display: block;
+    height: 90%;
+    width: 2px;
+    background-color: var(--first-color);
+    transform: translate(5px, -4px);
+}
+
+/* ----------------------------- Contact ---------------------- */
+.contact__container
+{
+    row-gap: 3rem;
+}
+
+.contact__input
+{
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    background-color: var(--first-color-light);
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-2);
+    border-radius: .5rem;
+}
+
+.contact::placeholder
+{
+    color: var(--first-color-dark);
+    font-family: var(--body-font);
+    font-weight: var(--font-medium);
+}
+
+.contact__info
+{
+    margin-bottom: var(--mb-3);
+}
+
+.contact__subtitle
+{
+    font-size: var(--h3-font-size);
+    color: var(--first-color-dark);
+    margin-bottom: var(--mb-1);
+}
+
+.contact__text
+{
+    display: block;
+    padding-left: 1rem;
+}
+
+/* ---------------------------------- Footer ---------------------------- */
+.footer
+{
+    background-color: var(--first-color-darken);
+    color: #24264F;
+    text-align: center;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+} 
+/* ------------------------- Media Queries for tablet screen ---------------------------- */
+@media screen and (min-width: 768px)
+{	  
+    .about__button
+    {
+        width: initial;
+    }
+
+    .skills__container,
+    .contact__inputs
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .education__time
+    {
+        padding: 0 2rem;
+    }
+
+    .contact__inputs
+    {
+        display: grid;
+        column-gap: 1.5rem;
+    }
+
+    .contact__info
+    {
+        padding-left: 3rem;
+    }
+
+    .footer
+    {
+        background: none;
+    }
+
+    .footer__container
+    {
+        color: var(--first-color-darken);
+        background-color: #1c1e3b;
+        padding: 1rem 0;
+    }
+}
+
+/* ------------------------------ Media Query for laptop/desktop screen ------------------------- */
+@media screen and (min-width: 1024px)
+{
+    body
+    {
+        margin: 0;
+    }
+
+    .l-header
+    {
+        width: 0;
+    }
+
+    .nav__toggle, .nav__logo, .nav__close
+    {
+        display: none;
+    }
+
+    .nav__menu
+    {
+        left: 0;
+    }
+
+    .about__container
+    {
+        height: 100vh;
+    }
+
+    .section
+    {
+        padding: 3rem 0 2rem;
+    }
+
+    .bd-grid, .bd-grid2
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+	
+    .bd-grid2
+    {
+		row-gap: 2rem;
+    }
+}
