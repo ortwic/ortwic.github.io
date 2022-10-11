@@ -111,7 +111,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">
               <button class="btn" data-bs-target="#menu-content" data-bs-toggle="collapse" aria-expanded="false" aria-controls="menu-content">
-                Contact
+                Collaboration
               </button>
             </a>
           </li>
@@ -341,7 +341,7 @@
             <span class="section-subtitle">Why Choose Me</span>
             <h2 class="section-title">My expertise Area</h2>
 
-            <div class="skills__container bd-grid">
+            <div class="two-columns bd-grid">
                 <div class="skills__content">
                     <h3 class="skills__subtitle">Technologies</h3>
 
@@ -506,20 +506,32 @@
 
         <!----------------------------------- Contact ------------------------------>
         <section class="contact section" id="contact">
-          <span class="section-subtitle">Get In Touch</span>
-          <h2 class="section-title">Support for your visions and projects</h2>
+          <span class="section-subtitle">What is important</span>
+          <h2 class="section-title">Collaborating on projects for common visions</h2>
+          <div class="two-columns bd-grid">
+            <p>
+              I believe in fairness and a balanced world. As a minimalist I am not good with 'too much' of everything.
+              Key is mindfulness and to be <a href="https://youtu.be/WPPPFqsECz0" target="_blank">grateful</a> for the obvious and small things in life.
+              So I'd like to distance myself from work that relate to finance, trading, pharma and automotive. 
+            </p>
+            <p>Education and culture on 
+              a small scale are important for a healthy society. It's funny but did you know that volunteers are responsible for the fundament
+              of our connected world? Most servers run on Linux and even huge software projects make heavily use of open source software like J4Log.
+            </p>
+          </div>
+          <h2 class="section-title">Get In Touch</h2>
 
-            <div class="contact__container bd-grid">
-                <form action="https://formspree.io/f/mnqrzjne" method="post" class="contact__form">
-                    <div class="contact__inputs">
-                        <input type="text" placeholder="Name" name="name" class="contact__input">
-                        <input type="mail" placeholder="Email" name="email" class="contact__input">
-                    </div>
-                    <input type="hidden" name="subject" value="Contact request from github portfolio" />
-                    <textarea placeholder="Message" name="message" id="" cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="submit" value="Send Message" class="btn contact__button">
-                </form>
-            </div>
+          <div class="contact__container bd-grid">            
+            <form action="https://formspree.io/f/mnqrzjne" method="post" class="contact__form">
+                <div class="contact__inputs two-columns">
+                    <input type="text" placeholder="Name" name="name" class="contact__input">
+                    <input type="mail" placeholder="Email" name="email" class="contact__input">
+                </div>
+                <input type="hidden" name="subject" value="Contact request from github portfolio" />
+                <textarea placeholder="Message" name="message" id="" cols="0" rows="10" class="contact__input"></textarea>
+                <input type="submit" value="Send Message" class="btn contact__button">
+            </form>
+          </div>
         </section>
 
     </main>

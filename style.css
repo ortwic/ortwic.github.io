@@ -277,7 +277,7 @@ button, input[type=submit]
 }
 
 /* -------------------------------------------- Skills ------------------------- */
-.skills__container
+.two-columns
 {
     row-gap: 2rem;
 }
@@ -445,8 +445,7 @@ button, input[type=submit]
         width: initial;
     }
 
-    .skills__container,
-    .contact__inputs
+    .two-columns
     {
         grid-template-columns: repeat(2, 1fr);
     }
