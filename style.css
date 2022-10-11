@@ -88,11 +88,6 @@ h1, h2, h3, p
     margin: 0;
 }
 
-h3
-{
-    font-weight: var(--font-semi-bold);
-}
-
 a
 {
     text-decoration: none;
@@ -141,19 +136,27 @@ a[for=menu-toggle] {
 }
 
 /* Class CSS */
-.section
+section
 {
+    min-height: calc(100vh - var(--header-height));
     padding: 4rem 0 2rem;
 }
 
 h2.section-title
 {
-    font-size: var(--h1-font-size);
+    font-size: var(--h2-font-size);
     color: var(--first-color);
     margin-bottom: var(--mb-3);
 }
 
-section > h2.section-title 
+h3.section-title
+{
+    font-size: var(--h3-font-size);
+    color: var(--first-color);
+    margin-bottom: var(--mb-3);
+}
+
+section h2
 {
     text-align: center;
 }
@@ -244,13 +247,6 @@ button, input[type=submit]
 
 .carousel-item .img-container img {
     display: inline;
-}
-
-/* ----------------------- Home ------------------------------ */
-.height__container
-{
-    height: calc(100vh - var(--header-height));
-    align-items: center;
 }
 
 .copy 
