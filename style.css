@@ -19,6 +19,9 @@
     --first-color-light: #EAE7E6;
     --first-color-light-dark: #BA4D41;
     --first-color-lighten: #FACC6B;
+
+    --carousel-bg-color: #1c1e3b;
+    --carousel-text-bg-color: #1c1e3bD0;
 	
     /* --first-color: #3742fa; */
     /* --first-color-dark: #5352ed; */
@@ -212,7 +215,7 @@ button, input[type=submit]
     margin-bottom: var(--mb-5);
     padding: 12px;
     border-radius: .5rem;
-	background-color: #1c1e3b;
+	background-color: var(--carousel-bg-color);
 }
 
 /* Since positioning the image, we need to help out the caption */
@@ -223,16 +226,21 @@ button, input[type=submit]
 }
 
 .carousel-caption span.section-subtitle {
-	/* color: #EC8F4C; */
-	text-shadow: 1px 1px 2px #000000C0;
+    font-weight: 500;
+	text-shadow: 0px 0px 5px #000000C0,
+                 1px 1px 1px #EAE7E6;
 }
 
-.carousel-caption h2.section-title {
-	/* color: #EC8F4C; */
-	text-shadow: -1px 1px 0 #686D75,
-				  1px 1px 0 #686D75,
+.carousel-caption .section-title {
+    margin-bottom: .2em;
+	text-shadow: -1px 1px 0 #26282b,
+				  1px 1px 0 #26282b,
 				 1px -1px 0 #686D75,
 				-1px -1px 0 #686D75;
+}
+
+.carousel-caption p {
+    background-color: var(--carousel-text-bg-color);
 }
 
 /* Declare heights because of positioning of img element */
