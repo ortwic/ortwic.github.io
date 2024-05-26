@@ -86,6 +86,10 @@ body
     line-height: 1.6;
 }
 
+main {
+    margin-top: 20px;
+}
+
 h1, h2, h3, p
 {
     margin: 0;
@@ -438,6 +442,12 @@ button, input[type=submit]
   z-index: 100;
   top: 0;
   width: 100%;
+  transition: top .2s ease;
+}
+
+.upper {
+    text-transform: uppercase;
+    font-weight: 200;
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */

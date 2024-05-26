@@ -1,8 +1,8 @@
-<nav class="navbar sticky-top" id="navbar">
+<nav class="navbar sticky" id="navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="#home">
-      <h1 class="d-inline">Ortwin Carstocea</h1>
-      <span>| Fullstack Developer</span>
+      <h3 class="d-inline">Ortwin Carstocea</h3>
+      <span class="upper">| Fullstack Developer</span>
     </a>
     <a class="navbar-toggler" href="#menu-content" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="menu-content">
       <span class="navbar-toggler-icon"></span>
@@ -50,16 +50,15 @@
 </nav>
 
 <script lang="text/javascript">
-  // const toolbar = document.getElementById("navbar");
-  // let lastScrollTop = 0;
+  const header = document.getElementById("navbar");
+  let lastScrollTop = 0;
 
-  // document.addEventListener("scroll", (event) => {
-  //   const target = event.target;
-  //   const top = target.scrollTop < lastScrollTop ? 0 
-  //             : target.scrollTop < toolbar.offsetHeight 
-  //             ? target.scrollTop : toolbar.offsetHeight
-  //   toolbar.style.top = `${-top}px`;
+  window.addEventListener("scroll", (event) => {
+    const top = window.pageYOffset < lastScrollTop ? 0 
+              : window.pageYOffset < header.offsetHeight 
+              ? window.pageYOffset : header.offsetHeight;
+    header.style.top = `${-top}px`;
 
-  //   lastScrollTop = target.scrollTop > 0 ? target.scrollTop : 0;
-  // });
+    lastScrollTop = window.pageYOffset > 0 ? window.pageYOffset : 0;
+  });
 </script>
