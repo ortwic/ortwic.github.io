@@ -1,0 +1,212 @@
+
+<section class="section" id="works">
+    <script src="assets/js/common.js" lang="javascript"></script>
+    <script src="assets/js/debug.js" lang="javascript"></script>
+    
+    <script type="text/javascript">
+      var someObject = { 
+          car: {
+              color:'red',
+              type:'SUV',
+              wheels:4,
+              hp:150,
+              isRunning: true,
+              drive: function drive(destination) {},
+              stop: function stop() {}
+          },
+          people: ['Max','Hugo','Vicky','Carl']
+      };
+      
+      function addConfig(m) {
+          if(m == 0) println.config( { debug: true, 
+                                      clearOnDblClick: true, 
+                                      overrideAlert: true, 
+                                      groupsNotCollapsed: false,
+                                      groupByObjectType: false, 
+                                      printScriptErrors: true
+                                    }, true );
+          else println.config( { debug: true, 
+                                clearOnDblClick: false, 
+                                overrideAlert: false, 
+                                groupsNotCollapsed: true,
+                                groupByObjectType: true, 
+                                printScriptErrors: false
+                              }, true );
+      }
+      
+      function addStyle() {
+          println.style( { left: '50%', background: 'aliceblue' } ); 
+      }
+      
+      window.onload = function() {
+          addEvent(document.getElementById("input"), "keyup", function (e) {
+              if(e.target.value && e.keyCode == 13) {
+                  try {
+                      var t = eval(e.target.value);
+                      if(typeof t == "object") println(e.target.value);
+                      if(t) println(t);
+                      //println(e); // funktioniert net...
+                  } catch(ex) {
+                      //println(ex);
+                  }
+              }
+          });
+      }
+    </script>
+
+    <span class="section-subtitle">Legacy web projects and student research projects</span>
+    <h2 class="section-title">Early works as a student</h2>
+    
+    <div class="bd-grid">
+      <div id="legacyCarousel" class="carousel slide pointer-event" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#legacyCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+          <button type="button" data-bs-target="#legacyCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#legacyCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#legacyCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#legacyCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#legacyCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#legacyCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="img-container container">
+              <img src="assets/images/desktopnotes.jpg" width="50%" height="50%" alt="Desktopnotes" title="Desktopnotes">
+              <div class="col-md-5">
+              </div>
+              <div class="col-md-7">
+              </div>
+            </div>
+            <div class="container">
+              <div class="carousel-caption">
+                <span class="section-subtitle">2006 - very first web app</span>
+                <h3 class="section-title">Desktopnotes</h3>
+                <p>
+                  Very first web app for ActiveDesktop long before the term "web apps" existed. 
+                  <!-- Browser support was IE5.5 up to IE8. Customizeable and dragable notes could be 
+                  created very dynamicly. Contents were stored into cookies. -->
+                </p>                        
+                <!-- <h4>Features:</h4>
+                <ul>
+                  <li>Notes can be created and dragged all over the place</li>
+                  <li>Text could be entered as plain HTML or in WYSIWYG style</li>
+                  <li>Background, due date and removal date configurable</li>
+                  <li>Customizeable background image</li>
+                </ul> -->
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img-container center">
+              <h3 title="common.js and debug.js">legacy common.js and debug.js (ES5)</h3>
+              <div style="display: inline-block; width: 80%; height:296px; overflow-y: scroll">                        
+<pre style="text-align:left;">
+1. firstly enable debug   <a href="?debug#projects">?debug</a>
+  1a. set config         <a href="javascript:addConfig(0);">println.config({ clearOnDblClick: true, overrideAlert: true }, show)</a> 
+  1b. or this config     <a href="javascript:addConfig(1);">println.config({ clearOnDblClick: false, overrideAlert: false }, show)</a> 
+  1c. append style       <a href="javascript:addStyle();">println.style({ left: "50%", background: 'aliceblue' })</a>
+  
+2. print some text        <a href="javascript:println('Hello World!')">println('Hello World!')</a>
+  2a. and again          <a href="javascript:println('Some more Text')">println('Some more Text')</a>
+  2b. and once again     <a href="javascript:println('Get outa here!', true)">println('Get outa here!', true)</a>
+  2c. limited...         <a href="javascript:println('Max 3 times', 3)">println('Max 3 times', 3)</a>
+  2d. ...by time         <a href="javascript:println('Limited in time', 0, 2000)">println('Limited in time', 0, 2000)</a>
+  
+3. print some objects     <a href="javascript:println(someObject)">println(someObject)</a>
+  3a. even your DOM      <a href="javascript:println(window, 1)">println(window, 1)</a>
+  3b. whatever you like  println(<input id="input" type="text" value="Math" style="background:transparent;color:silver;border:0px;font-family:monospace;width:74px">)
+
+4. force some error:      <a href="javascript:foo.bar()">foo.bar('does not exist')</a>    
+
+If you like you can also use <a href="javascript:alert('Hallo Welt!')">alert()</a>. (You have to override it via config)
+</pre>                  
+              </div>
+            </div>
+            <div class="container">
+              <div class="carousel-caption">
+                <span class="section-subtitle">2006 - tooling for DHTML development</span>
+                <h3 class="section-title">Polyfills and debug output</h3>
+                <p>Once upon a time when console.log(window) just printed [object Object] </p>
+                <a href="https://github.com/ortwic/common.js" target="_blank">GitHub Repo</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img-container center">
+              <img src="assets/images/ocdesign.jpg" width="60%" height="60%" alt="Personal homepage" title="Personal homepage">
+            </div>
+            <div class="container">
+              <div class="carousel-caption">
+                <span class="section-subtitle">2009 - 4th iteration of personal homepage</span>
+                <h3 class="section-title">Personal homepage [<a href="ocdesign/HPv4" target="_blank">Demo</a>]</h3>
+                <p>Interactive design simular to <i>NFS3: Hot Pursuit</i> main menu theme with dragable windows.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img-container center">
+              <img src="assets/images/NutHunt.jpg" width="58%" height="58%" alt="NutHunt game" title="NutHunt game">
+            </div>
+            <div class="container">
+              <div class="carousel-caption">
+                <span class="section-subtitle">2010 - Think'n'Run Game</span>
+                <h3 class="section-title">NutHunt v0.2 beta</h3>
+                <p>Inspired by <a href="https://archive.org/details/DaisysGarden2_1020" target="_blank">Daisy's Garden 2</a> I created this 
+                  simple game with Java 6 during the 3rd semester of media informatics. It also features a graphical editor where you can create
+                  custom levels. The squirrel has to collect differt kinds of nuts, unlock doors underground before the time runs out. 
+                  Each nut has its own score and weight which slows your character down.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img-container center">
+              <img src="assets/images/Webapps.jpg" width="58%" height="58%" alt="HTML5 WebApps" title="HTML5 WebApps">
+            </div>
+            <div class="container">
+              <div class="carousel-caption">
+                <span class="section-subtitle">2012 - Very first Web-Apps in HTML5</span>
+                <h3 class="section-title">Web-Apps for automation systems</h3>
+                <p>
+                  Front-End design with C# and WPF as well HTML5 and JavaScript for 
+                  <a href="https://www.vogler-engineering.de/" target="_blank">Vogler Engineering</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img-container center">
+              <img src="assets/images/webgl.jpg" width="58%" height="58%" alt="Formula Student concept car" title="Formula Student concept car">
+            </div>
+            <div class="container">
+              <div class="carousel-caption">
+                <span class="section-subtitle">2012 - Supporting formula student project</span>
+                <h3 class="section-title">Formula Student concept car [<a href="webgl_racer" target="_blank">Demo</a>]</h3>
+                <p>Designed and modelled a prototype using 3D Studio Max and WebGl (three.js) </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="img-container center">
+              <img src="assets/images/SHORE.jpg" width="59%" height="59%" alt="SHORE Image Recognition" title="SHORE Image Recognition">
+            </div>
+            <div class="container">
+              <div class="carousel-caption">
+                <span class="section-subtitle">2013 - Project- and Bachelorthesis</span>
+                <h3 class="section-title">Machine learning </h3>
+                <p>Improved age recognition with NumPy and ScyPy for SHORE&trade;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#legacyCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#legacyCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+</section>
