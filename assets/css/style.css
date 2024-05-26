@@ -81,7 +81,7 @@ body
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
-    background-color: #24264F;
+    background-color: #18192F;
     color: var(--text-color);
     line-height: 1.6;
 }
@@ -112,7 +112,9 @@ img
 nav.navbar
 {
 	border: 0;
-	background-color: #FACC6B;
+	background-color: #FACC6BC0;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
 }
 
 div a.navbar-toggle
@@ -433,6 +435,7 @@ button, input[type=submit]
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
   position: fixed;
+  z-index: 100;
   top: 0;
   width: 100%;
 }
