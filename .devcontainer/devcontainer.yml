@@ -1,0 +1,7 @@
+{
+  "name": "jekyll-dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "jekyll",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [4000]
+}
