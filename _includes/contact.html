@@ -15,18 +15,17 @@
     </div>
     <h2 class="section-title">Get In Touch</h2>
 
-    <div class="contact__container bd-grid two-columns">
+    <div class="contact__container two-columns bd-grid">
+      <form action="https://formspree.io/f/mnqrzjne" method="post" class="contact__form">
+          <input type="text" placeholder="Name" name="name" class="contact__input">
+          <input type="mail" placeholder="Email" name="email" class="contact__input">
+          <input type="hidden" name="subject" value="Contact request from github portfolio" />
+          <textarea placeholder="Message" name="message" id="" cols="0" rows="10" class="contact__input">
+          </textarea>
+          <input type="submit" value="Send Message" class="btn contact__button">
+      </form>
       <p>
-        <form action="https://formspree.io/f/mnqrzjne" method="post" class="contact__form">
-            <input type="text" placeholder="Name" name="name" class="contact__input">
-            <input type="mail" placeholder="Email" name="email" class="contact__input">
-            <input type="hidden" name="subject" value="Contact request from github portfolio" />
-            <textarea placeholder="Message" name="message" id="" cols="0" rows="10" class="contact__input"></textarea>
-            <input type="submit" value="Send Message" class="btn contact__button">
-        </form>
-      </p>
-      <p>
-        <img src="https://imgs.xkcd.com/comics/dependency_2x.png" alt="Dependency" title="Dependency">
+        <img src="assets/images/dependency_2x.png" alt="Dependency" title="Dependency">
       </p>
     </div>
   </section>
